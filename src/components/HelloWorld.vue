@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="input-box">
-      请输入：
+      请输入查询内容：
       <Input v-model="value" placeholder="Enter something..." class="input" />
       <Button type="success" @click="handleSearch">确定</Button>
     </div>
