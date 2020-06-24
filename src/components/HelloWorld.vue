@@ -31,7 +31,9 @@ export default {
         },
         {
           title: "des",
-          key: "des",
+          render: function(createElement, context) {
+            return createElement("div", {}, JSON.stringify(context.row.des, 4));
+          },
         },
       ],
     };
@@ -39,7 +41,7 @@ export default {
   methods: {
     async handleSearch() {
       try {
-        const res = await axios.get(`/api/search?condition=${this.value}`);
+        const res = await axios.get(`/api/search?keyword=${this.value}`);
 
         this.list =
           res.status === 200 && res.data.error === 0 ? res.data.data : [];

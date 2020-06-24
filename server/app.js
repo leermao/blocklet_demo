@@ -14,9 +14,9 @@ chains.map(item => {
 const getConnResByChainName = async (input, chain) => {
   try {
     const recordMap = {
-      0: "account",
-      1: "transaction",
-      2: "state",
+      0: "账户（Account）",
+      1: "交易（Transaction）",
+      2: "资产（Asset）",
     };
 
     const res = await Promise.all([
@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/search", async (req, res) => {
   const results = chains.map(item => {
-    return getConnResByChainName(req.query.condition, item);
+    return getConnResByChainName(req.query.keyword, item);
   });
 
   try {
