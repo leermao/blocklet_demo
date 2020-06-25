@@ -4,12 +4,13 @@ const path = require("path");
 const app = express();
 const results = require("./result");
 
-app.use(express.static(path.join(__dirname, "../dist/")));
+const staticDir = process.env.NODE_ENV === 'prodution' ? './' : '../';
+app.use(express.static(path.join(__dirname,staticDir, "dist/")));
 
 app.get("/", (req, res) => {
-  const htmlPath = path.resolve(__dirname, "../dist/index.html");
+  const htmlPath = path.resolve(__dirname, staticDir,"dist/index.html");
   const html = fs.readFileSync(htmlPath, "utf-8");
-  res.send(html);
+  res.send(html.toString());
 });
 
 app.get("/api/search", async (req, res) => {
