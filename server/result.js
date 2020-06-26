@@ -6,6 +6,10 @@ chains.map(item => {
   ForgeSDK.connect(`${item.endpoint}/api`, { name: item.name });
 });
 
+const ACCOUNT_TYPE = 1;
+const TRANSACTION_TYPE = 2;
+const ASSET_TYPE = 3;
+
 class result {
   constructor(keyword) {
     this.keyword = keyword;
@@ -21,14 +25,17 @@ class result {
 
       if (res.code === "OK" && res.state) {
         return {
-          type: "账户（Account）",
+          type: ACCOUNT_TYPE,
+          typeName: "账户（Account）",
           chain: chain.endpoint,
           des: res.state,
         };
       }
 
       return null;
-    } catch (error) {
+    } catch (err) {
+      console.error(`${chain.endpoint} getAccountState err`);
+      console.log(JSON.stringify(err.errors));
       return null;
     }
   }
@@ -38,14 +45,17 @@ class result {
       const res = await ForgeSDK.getTx({ hash: input }, { conn: chain.name });
       if (res.code === "OK" && res.info) {
         return {
-          type: "交易（Transaction）",
+          type: TRANSACTION_TYPE,
+          typeName: "交易（Transaction）",
           chain: chain.endpoint,
           des: res.info,
         };
       }
 
       return null;
-    } catch (error) {
+    } catch (err) {
+      console.error(`${chain.endpoint} getTx err`);
+      console.log(JSON.stringify(err.errors));
       return null;
     }
   }
@@ -58,14 +68,17 @@ class result {
       );
       if (res.code === "OK" && res.state) {
         return {
-          type: "资产（Asset）",
+          type: ASSET_TYPE,
+          typeName: "资产（Asset）",
           chain: chain.endpoint,
           des: res.state,
         };
       }
 
       return null;
-    } catch (error) {
+    } catch (err) {
+      console.error(`${chain.endpoint} getAssetState err`);
+      console.log(JSON.stringify(err.errors));
       return null;
     }
   }
@@ -85,7 +98,9 @@ class result {
       }
 
       return res.find(item => item !== null);
-    } catch (error) {
+    } catch (err) {
+      console.error(`${chain.endpoint} getConnResByChainName err:`);
+      console.log(JSON.stringify(err.errors));
       return null;
     }
   }

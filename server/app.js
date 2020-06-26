@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, staticDir, "dist/")));
 app.get("/", (req, res) => {
   const htmlPath = path.resolve(__dirname, staticDir, "dist/index.html");
   const html = fs.readFileSync(htmlPath, "utf-8");
+
   res.send(html.toString());
 });
 
@@ -24,8 +25,8 @@ app.get("/api/search", async (req, res) => {
   }
 });
 
-const port =
-  parseInt(process.env.BLOCKLET_PORT || process.env.APP_PORT, 10) || 3000;
+const custom_port = process.env.BLOCKLET_PORT || process.env.APP_PORT;
+const port = parseInt(custom_port, 10) || 3000;
 
 app.listen(port, err => {
   if (err) throw err;
