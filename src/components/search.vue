@@ -163,6 +163,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.hello {
+  padding: 100px;
+}
+
 .input {
   width: 400px;
   margin-right: 10px;
