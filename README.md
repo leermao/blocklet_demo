@@ -1,24 +1,17 @@
 # test_blocklet_vue
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
+## 编译前端环境
 ```
 yarn build
 ```
 
-### Lints and fixes files
+## 启动后端环境
 ```
-yarn lint
+node server/app.js
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 部署blocklet
+```
+abtnode deploy .
+```
+
