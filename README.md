@@ -28,7 +28,7 @@ node server/app.js
 ### 编译生产内容
 
 ```
-yarn build
+node server/app.js
 ```
 
 ### 部署 abtnode 上运行
