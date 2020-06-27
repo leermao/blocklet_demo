@@ -47,13 +47,13 @@ node server/app.js
 npm run build
 ```
 
-### 部署
+## 部署
 
 ```
 abtnode deploy .
 ```
 
-### 项目功能
+## 项目功能
 
 ##### PC 端
 
@@ -63,6 +63,6 @@ abtnode deploy .
 
 ![M 端](./screenshots/m.png)
 
-### TODO
+## TODO
 
 - [ ] 修复 ui 样式
