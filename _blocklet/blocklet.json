@@ -1,5 +1,5 @@
 {
-  "name": "search_des",
+  "name": "search_chain_info",
   "description": "链网超级搜索框",
   "group": "dapp",
   "color": "primary",
@@ -12,7 +12,7 @@
     "pre-deploy": "npm run deploy"
   },
   "main": "server/app.js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [],
   "author": ""
 }

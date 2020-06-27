@@ -4,7 +4,7 @@ const path = require("path");
 
 const staticDir = process.env.NODE_ENV === "prodution" ? "./" : "../";
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
   const deviceAgent = req.headers["user-agent"].toLowerCase();
   const agentID = deviceAgent.match(
     /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i

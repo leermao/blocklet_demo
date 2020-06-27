@@ -1,24 +1,48 @@
-# test_blocklet_vue
+# 链网超级搜索框
 
-## Project setup
+## 简介
+
+> 查询官方链网的几条链是否存在对应的记录：账户、交易、资产
+> 展示命中记录类型、属于哪条链、命中记录的摘要卡片
+
+## 安装项目依赖
+
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 启动开发环境
+
+#### 前端
+
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+#### 后端
+
+```
+node server/app.js
+```
+
+### 编译生产内容
+
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### 部署 abtnode 上运行
+
 ```
-yarn lint
+abtnode deploy .
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 项目功能
+
+##### PC 端
+
+![PC 端](./screenshots/pc.png)
+
+##### M 端
+
+![M 端](./screenshots/m.png)
