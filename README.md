@@ -18,7 +18,7 @@
 
 ## 安装
 
-这个项目用到 node 和 npm
+这个项目用到 node 和 npm，使用前请检查本地是否安装。
 
 ```
 git clone git@github.com:leermao/blocklet_demo.git
